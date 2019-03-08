@@ -1,6 +1,6 @@
 from locust import HttpLocust, TaskSet, task
 
-HOST = '0.0.0.0'
+HOST = '172.105.226.70'
 PORT = 8000
 
 class JsonTasks(TaskSet):

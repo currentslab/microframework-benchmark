@@ -1,5 +1,6 @@
 from bottle import route, run
 from microframeworks.settings import HOST, PORT, JSON_DATA, TEXT
+import ujson
 
 @route('/about')
 def about():
@@ -7,7 +8,7 @@ def about():
 
 @route("/json")
 def json_test():
-    return JSON_DATA
+    return ujson.dumps(JSON_DATA)
 
 @route("/text")
 def text_test():

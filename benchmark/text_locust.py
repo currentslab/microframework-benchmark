@@ -1,5 +1,6 @@
 from locust import HttpLocust, TaskSet, task
-from microframeworks.settings import HOST, PORT
+HOST = '172.105.226.70'
+PORT = 8000
 
 class TextTasks(TaskSet):
     

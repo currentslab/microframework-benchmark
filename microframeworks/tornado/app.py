@@ -1,5 +1,6 @@
 import tornado.ioloop
 import tornado.web
+import ujson
 from microframeworks.settings import HOST, PORT, JSON_DATA, TEXT
 
 class TextHandler(tornado.web.RequestHandler):
@@ -8,7 +9,7 @@ class TextHandler(tornado.web.RequestHandler):
 
 class JsonHandler(tornado.web.RequestHandler):
     def get(self):
-        self.write(JSON_DATA)
+        self.write(ujson.dumps(JSON_DATA))
 
 class AboutHandler(tornado.web.RequestHandler):
     def get(self):
