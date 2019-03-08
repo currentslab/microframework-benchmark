@@ -6,7 +6,7 @@ def text_test(request):
     return request.Response(text=TEXT)
 
 def json_test(request):
-    return request.Response(text=ujson(JSON_DATA), mime_type='application/json')
+    return request.Response(text=ujson.dumps(JSON_DATA), mime_type='application/json')
 
 def about(request):
     return request.Response(text='Sanic')

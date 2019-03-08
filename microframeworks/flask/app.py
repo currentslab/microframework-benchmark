@@ -14,3 +14,6 @@ def json_test():
 @app.route("/text")
 def text_test():
     return TEXT
+
+if __name__ == "__main__":
+    app.run(host=HOST, port=PORT, debug=False)
