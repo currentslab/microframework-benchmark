@@ -19,7 +19,53 @@ Locust will load test all frameworks for full 2 minutes, under 1000 users with a
 
 ## Results
 
-### Text
+## Local server to local client : Macbook Pro 2016 ( i5-7360U, 8G RAM )
+
+Locust load test for 1 minute, total user 4000 with hatch rate of 500 (user growth at 500 users per step)
+
+CPU fan run at full speed, to prevent thermal throttle
+
+#### Text
+
+| Framework  | Total Request  | Request Per Second  | Median Response Time (ms) | Failed Requests |
+|------------|:--------------:|:-------------------:|:---------------------:|:---:|
+|   aiohttp   |  23316     |  15 | 388.58 | 0 |
+|   Bottle   |  18023         | 163  | 304.52 | 163 |
+|   Flask    |  19023 | 77 |  318.03 | 0 |
+|   Japronto |  23868 |  7 | 399.93  | 0 |
+|   Pyramid  |  20067 |  69 | 340.12 | 135 |
+|   Sanic    |  16473 | 110  |  275.26 | 4 |
+|   Starlette    |  17278 | 130  |  288.89 | 0 |
+|   Tornado  |  23644 | 10  |  395.91 | 0 |
+
+#### Json ( Size 106 Bytes )
+
+| Framework  | Total Request  | Request Per Second  | Median Response Time (ms) | Failed Requests |
+|------------|:--------------:|:-------------------:|:---------------------:|:---:|
+|   aiohttp   |  23459     |  11 | 392.48 | 0 |
+|   Bottle   |  20778    |  74 | 350.93 | 163 |
+|   Flask    |  19809 | 82  |  333.80 | 0 |
+|   Japronto |  24058 |  7 | 406.88  | 0 |
+|   Pyramid  |  20912 |  74 | 350.75 | 233 |
+|   Sanic    |  16877 | 120  |  285.45 | 2 |
+|   Starlette    |  17216 | 120   |  290.92 | 1 |
+|   Tornado  |  23993 |  8 | 406.02 | 0 |
+
+### Remote Server : Linode nano node ( North-East region )
+
+
+#### Json
+
+| Framework  | Total Request  | Request Per Second  | Median Response Time (ms) | Failed Requests |
+|------------|:--------------:|:-------------------:|:---------------------:|:---:|
+|   Bottle   |  32017         |  269.52 | 140 | 3 |
+|   Flask    |  20142 |  294.99 |  270 | 0 |
+|   Japronto |  11850 |  99.66 | **61**  | 0 |
+|   Pyramid  |  31766 |  266.91 | 150 | 0 |
+|   Sanic    |  8520 | 99.75  |  120 | 7 |
+|   Tornado  |  11665 | 98.11  |  62 | 204 |
+
+#### Text
 
 | Framework  | Total Request  | Request Per Second  | Median Response Time (ms) |
 |------------|:--------------:|:-------------------:|:---------------------:|
@@ -32,7 +78,7 @@ Locust will load test all frameworks for full 2 minutes, under 1000 users with a
 
 *Sanic : 29 failed requests
 
-### Json
+#### Json
 
 | Framework  | Total Request  | Request Per Second  | Median Response Time (ms) | Failed Requests |
 |------------|:--------------:|:-------------------:|:---------------------:|:---:|
@@ -47,7 +93,7 @@ For the lowest median response time, Japronto and Tornado are the best among all
 
 Flask, Bottle in my opinion are the best synchronous framework among all. While 
 
-Tornado and Japronto have the better performance in async function. Do note that tornado support async function in callback form, while Jaronto use uvloop for async task. 
+Tornado and Japronto have the better performance in async function. Do note that tornado support async function in callback form, while Japronto use uvloop for async task. 
 
 Note : The one million requests per second from Japronto is archieved using pipelining. However, in a real world use case, each client will only send one request per second.
 
