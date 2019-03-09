@@ -1,13 +1,12 @@
 from wsgiref.simple_server import make_server
 from pyramid.config import Configurator
 from pyramid.response import Response
+import ujson
 from microframeworks.settings import HOST, PORT, JSON_DATA, TEXT
 
-@view_config(renderer='string')
 def text_test(request):
     return Response(TEXT)
 
-@view_config(renderer='json')
 def json_test(request):
     return ujson.dumps(JSON_DATA)
 

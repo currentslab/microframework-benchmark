@@ -75,12 +75,12 @@ Change the filename_to_save to the current framework you are running in the lino
 
 On the project root execute this script to start text benchmark
 ```
-locust -f benchmark/text_locust.py --no-web -c 3000 -r 100 --csv=[filename_to_save] -t2m
+locust -f benchmark/text_locust.py --no-web -c 3000 -r 100 -t2m --csv=[filename_to_save] 
 ```
 
 On the project root execute this script to start json benchmark
 ```
-locust -f benchmark/text_locust.py --no-web -c 3000 -r 100 --csv=[filename_to_save] -t2m
+locust -f benchmark/text_locust.py --no-web -c 3000 -r 100 -t2m --csv=[filename_to_save] 
 ```
 
 

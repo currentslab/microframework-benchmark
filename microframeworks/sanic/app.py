@@ -1,7 +1,7 @@
 from sanic import Sanic
 from sanic import response
 from datetime import datetime
-from sanic.response import text
+from sanic.response import text, json
 from microframeworks.settings import HOST, PORT, JSON_DATA, TEXT
 app = Sanic(__name__)
 
@@ -12,12 +12,11 @@ async def service_name(request):
 
 @app.route("/json")
 async def json_test(request):
-    return response.json({"test": True})
+    return json(JSON_DATA)
 
 @app.route("/text")
 async def text_test(request):
-    return text("Hello World!")
-
+    return text(TEXT)
 
 if __name__ == '__main__':
     app.run(host=HOST, port=PORT, debug=False)
