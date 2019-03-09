@@ -49,7 +49,7 @@ Flask, Bottle in my opinion are the best synchronous framework among all. While
 
 Tornado and Japronto have the better performance in async function. Do note that tornado support async function in callback form, while Jaronto use uvloop for async task. 
 
-Note : The one million requests per second from Japronto is archieve using pipelining. However, in a real world use case, each client will only send one request per second.
+Note : The one million requests per second from Japronto is archieved using pipelining. However, in a real world use case, each client will only send one request per second.
 
 ## Setup
 
@@ -85,6 +85,9 @@ locust -f benchmark/text_locust.py --no-web -c 3000 -r 100 --csv=[filename_to_sa
 
 
 # Todo
+
 1. Run multiple times for each benchmark and use the average value
 2. Include aiohttp for benchmark 
 3. Auto extract benchmark result and generate the final table
+4. Track memory footprint for each framework
+5. File serving benchmark
