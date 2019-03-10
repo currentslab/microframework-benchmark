@@ -1,0 +1,3 @@
+"Method","Name","# requests","# failures","Median response time","Average response time","Min response time","Max response time","Average Content Size","Requests/s"
+"GET","/json",19809,0,82,1370,12,23124,128,333.80
+"None","Total",19809,0,82,1370,12,23124,128,333.80
