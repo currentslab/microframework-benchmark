@@ -1,6 +1,9 @@
 import tornado.ioloop
 import tornado.web
 import ujson
+import resource
+resource.setrlimit(resource.RLIMIT_NOFILE, (999999, 999999))
+
 from microframeworks.settings import HOST, PORT, JSON_DATA, TEXT
 
 class TextHandler(tornado.web.RequestHandler):

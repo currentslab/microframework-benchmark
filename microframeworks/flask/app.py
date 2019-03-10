@@ -1,5 +1,7 @@
 from microframeworks.settings import HOST, PORT, JSON_DATA, TEXT
 from flask import Flask, jsonify
+import resource
+resource.setrlimit(resource.RLIMIT_NOFILE, (999999, 999999))
 
 app = Flask(__name__)
 

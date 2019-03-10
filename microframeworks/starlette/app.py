@@ -3,6 +3,8 @@ from microframeworks.settings import HOST, PORT, JSON_DATA, TEXT
 from starlette.applications import Starlette
 from starlette.responses import UJSONResponse, Response
 import uvicorn
+import resource
+resource.setrlimit(resource.RLIMIT_NOFILE, (999999, 999999))
 
 app = Starlette()
 

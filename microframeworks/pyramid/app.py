@@ -3,6 +3,8 @@ from pyramid.config import Configurator
 from pyramid.response import Response
 import ujson
 from microframeworks.settings import HOST, PORT, JSON_DATA, TEXT
+import resource
+resource.setrlimit(resource.RLIMIT_NOFILE, (999999, 999999))
 
 def text_test(request):
     return Response(TEXT)

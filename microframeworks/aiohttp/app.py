@@ -1,6 +1,8 @@
 from aiohttp import web
 from microframeworks.settings import HOST, PORT, JSON_DATA, TEXT
 import ujson
+import resource
+resource.setrlimit(resource.RLIMIT_NOFILE, (999999, 999999))
 
 def text_test(request):
     return web.Response(text=TEXT)
