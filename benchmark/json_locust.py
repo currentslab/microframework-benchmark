@@ -1,4 +1,6 @@
 from locust import HttpLocust, TaskSet, task
+import resource
+resource.setrlimit(resource.RLIMIT_NOFILE, (999999, 999999))
 
 HOST = '0.0.0.0'
 PORT = 8000

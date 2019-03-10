@@ -53,41 +53,34 @@ CPU fan run at full speed, to prevent thermal throttle
 
 ### Remote Server : Linode nano node ( North-East region )
 
-
-#### Json
-
-| Framework  | Total Request  | Request Per Second  | Median Response Time (ms) | Failed Requests |
-|------------|:--------------:|:-------------------:|:---------------------:|:---:|
-|   Bottle   |  32017         |  269.52 | 140 | 3 |
-|   Flask    |  20142 |  294.99 |  270 | 0 |
-|   Japronto |  11850 |  99.66 | **61**  | 0 |
-|   Pyramid  |  31766 |  266.91 | 150 | 0 |
-|   Sanic    |  8520 | 99.75  |  120 | 7 |
-|   Tornado  |  11665 | 98.11  |  62 | 204 |
+Locust load test for 1 minute, total user 10,000 with hatch rate of 100 (user growth at 100 users per step)
 
 #### Text
 
-| Framework  | Total Request  | Request Per Second  | Median Response Time (ms) |
-|------------|:--------------:|:-------------------:|:---------------------:|
-|   Bottle   |  31976         |  269.52 | 140 |
-|   Flask    |  31858 |  266.2 |  180 |
-|   Japronto |  11925 |  99.59 | **61**  |
-|   Pyramid  |  31981 |  268.25 | 170 |
-|   Sanic*    |  11741 | 98.34  |  120 |
-|   Tornado  |  11857 | 99.59  |  62 |
-
-*Sanic : 29 failed requests
+| Framework  | Total Request  | Request Per Second  | Median Response Time (ms) | Failed Requests |
+|------------|:--------------:|:-------------------:|:---------------------:|:---:|
+|   aiohttp   |  18908     |  313.74 | 63 | 0 |
+|   Bottle   |  13250    |  221.04 | 120 | 0 |
+|   Flask    |  16012 | 265.72  |  120 | 0 |
+|   Japronto |  18804 |  313.17 | 62  | 0 |
+|   Pyramid  |  12290 |  206.84 | 120 | 345 |
+|   Sanic    |  18537 | 310.92  |  120 | 43 |
+|   Starlette    |  18671 | 311.90   |  120 | 2 |
+|   Tornado  |  18771 |  314.84 | 63 | 0 |
 
 #### Json
 
 | Framework  | Total Request  | Request Per Second  | Median Response Time (ms) | Failed Requests |
 |------------|:--------------:|:-------------------:|:---------------------:|:---:|
-|   Bottle   |  32017         |  269.52 | 140 | 3 |
-|   Flask    |  20142 |  294.99 |  270 | 0 |
-|   Japronto |  11850 |  99.66 | **61**  | 0 |
-|   Pyramid  |  31766 |  266.91 | 150 | 0 |
-|   Sanic    |  8520 | 99.75  |  120 | 7 |
-|   Tornado  |  11665 | 98.11  |  62 | 204 |
+|   aiohttp   |  18924     |  317.42 | 63 | 0 |
+|   Bottle   |  13402    |  225.04 | 120 | 163 |
+|   Flask    |  13393 | 224.14  |  120 | 0 |
+|   Japronto |  19003 |  319.82 | 62  | 0 |
+|   Pyramid  |  13316 |  223.58 | 120 | 0 |
+|   Sanic    |  18525 | 311.76  |  120 | 42 |
+|   Starlette    |  17260 | 288.02   |  120 | 3 |
+|   Tornado  |  18939 |  317.33 | 63 | 0 |
+
 
 For the lowest median response time, Japronto and Tornado are the best among all 5 frameworks.
 
