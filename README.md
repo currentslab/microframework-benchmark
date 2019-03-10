@@ -21,7 +21,7 @@ Locust will load test all frameworks for full 2 minutes, under 1000 users with a
 
 ## Local server and client : Macbook Pro 2016 ( i5-7360U, 8G RAM )
 
-Locust load test for 1 minute, total user 4000 with hatch rate of 500 (user growth at 500 users per step)
+Locust load test for 1 minute, total user 4,000 with hatch rate of 500 (user growth at 500 users per step)
 
 CPU fan run at full speed, to prevent thermal throttle
 
