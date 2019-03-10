@@ -51,7 +51,7 @@ CPU fan run at full speed, to prevent thermal throttle
 |   Starlette    |  17216 | 120   |  290.92 | 1 |
 |   Tornado  |  23993 |  8 | 406.02 | 0 |
 
-### Remote Server : Linode nano node ( North-East region )
+### Remote Server : Linode nanode ( North-East region )
 
 Locust load test for 1 minute, total user 10,000 with hatch rate of 100 (user growth at 100 users per step)
 
@@ -84,9 +84,7 @@ Locust load test for 1 minute, total user 10,000 with hatch rate of 100 (user gr
 
 For the lowest median response time, Japronto and Tornado are the best among all 5 frameworks.
 
-Flask, Bottle in my opinion are the best synchronous framework among all. While 
-
-Tornado and Japronto have the better performance in async function. Do note that tornado support async function in callback form, while Japronto use uvloop for async task. 
+Flaskin my opinion are the best synchronous framework among all. aiohttp, Tornado, Japronto have the better performance in async function. Do note that tornado support async function in callback form, while Japronto use uvloop for async task. 
 
 Note : The one million requests per second from Japronto is archieved using pipelining. However, in a real world use case, each client will only send one request per second.
 
