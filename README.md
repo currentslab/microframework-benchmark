@@ -11,11 +11,11 @@ For simplicity, [Locust](https://locust.io/) is used to load test all framework.
 
 All framework are under Linode 1vCPU 1GB with no additional pipeline layer. Adding any pipeline will change the final results.
 
-1. Json serialization and delivering : Since Sanic use ujson by default, ujson is used in all framework for serialization. Hence, the result should be correlate to text delivering result as well.
+1. Json serialization and delivering : Since Sanic use ujson by default, ujson is used in all framework for serialization. Hence, the result should correlate to text delivering result as well.
 
 2. Text delivering : Hello World
 
-Locust will load test all frameworks for full 2 minutes, under 1000 users with a hatch rate of 100 per second. I will increase the concurrent users number untill the framework start having failed connection.
+Locust will load test all frameworks for full 2 minutes. I will increase the concurrent users number untill the framework start having failed connection. To prevent os resource cap, resource limitation was set to 999999.
 
 ## Results
 
