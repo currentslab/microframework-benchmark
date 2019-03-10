@@ -19,13 +19,13 @@ Locust will load test all frameworks for full 2 minutes. I will increase the con
 
 ## Results
 
-## Local server and client : Macbook Pro 2016 ( i5-7360U, 8G RAM )
+### Local server and client : Macbook Pro 2016 ( i5-7360U, 8G RAM )
 
 Locust load test for 1 minute, total user 4,000 with hatch rate of 500 (user growth at 500 users per step)
 
 CPU fan run at full speed, to prevent thermal throttle
 
-#### Text
+#### Text ( 12 Bytes)
 
 | Framework  | Total Request  | Request Per Second  | Median Response Time (ms) | Failed Requests |
 |------------|:--------------:|:-------------------:|:---------------------:|:---:|
@@ -38,7 +38,7 @@ CPU fan run at full speed, to prevent thermal throttle
 |   Starlette    |  17278 | 130  |  288.89 | 0 |
 |   Tornado  |  23644 | 10  |  395.91 | 0 |
 
-#### Json ( Size 106 Bytes )
+#### Json ( 106 Bytes )
 
 | Framework  | Total Request  | Request Per Second  | Median Response Time (ms) | Failed Requests |
 |------------|:--------------:|:-------------------:|:---------------------:|:---:|
