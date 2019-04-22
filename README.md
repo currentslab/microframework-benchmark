@@ -27,7 +27,7 @@ CPU fan run at full speed, to prevent thermal throttle
 
 #### Text ( 12 Bytes)
 
-| Framework  | Total Request  | Request Per Second  | Median Response Time (ms) | Failed Requests |
+| Framework  | Total Request  | Median Response Time (ms) | Request Per Second  | Failed Requests |
 |------------|:--------------:|:-------------------:|:---------------------:|:---:|
 |   aiohttp   |  23316     |  15 | 388.58 | 0 |
 |   Bottle   |  18023         | 163  | 304.52 | 163 |
@@ -40,7 +40,7 @@ CPU fan run at full speed, to prevent thermal throttle
 
 #### Json ( 106 Bytes )
 
-| Framework  | Total Request  | Request Per Second  | Median Response Time (ms) | Failed Requests |
+| Framework  | Total Request  | Median Response Time (ms) | Request Per Second | Failed Requests |
 |------------|:--------------:|:-------------------:|:---------------------:|:---:|
 |   aiohttp   |  23459     |  11 | 392.48 | 0 |
 |   Bottle   |  20778    |  74 | 350.93 | 163 |
@@ -67,6 +67,7 @@ Locust load test for 1 minute, total user 10,000 with hatch rate of 100 (user gr
 |   Sanic    |  18537 | 310.92  |  120 | 43 |
 |   Starlette    |  18671 | 311.90   |  120 | 2 |
 |   Tornado  |  18771 |  314.84 | 63 | 0 |
+|   Django+Gunicorn  |  18052 |  730 | 152 | 0 |
 
 #### Json
 
@@ -108,7 +109,7 @@ python -m microframeworks.[framework name].app
 For Django 
 ```
 cd fullframeworks/django_test
-python manage.prunserver 0.0.0.0:8000 --noreload
+gunicorn -b 0.0.0.0:8000 django_test.wsgi --workers=1
 ```
 
 Change the framework name to any of the available package under microframeworks : bottle, flask, japronto, pyramid, sanic, tornado
