@@ -104,6 +104,13 @@ Start running framework
 ```
 python -m microframeworks.[framework name].app
 ```
+
+For Django 
+```
+cd fullframeworks/django_test
+python manage.prunserver 0.0.0.0:8000 --noreload
+```
+
 Change the framework name to any of the available package under microframeworks : bottle, flask, japronto, pyramid, sanic, tornado
 
 ### Locust Setup
