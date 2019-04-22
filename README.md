@@ -73,7 +73,7 @@ Locust load test for 1 minute, total user 10,000 with hatch rate of 100 (user gr
 | Framework  | Total Request  | Request Per Second  | Median Response Time (ms) | Failed Requests |
 |------------|:--------------:|:-------------------:|:---------------------:|:---:|
 |   aiohttp   |  18924     |  317.42 | 63 | 0 |
-|   Bottle   |  13402    |  225.04 | 120 | 163 |
+|   Bottle   |  13402    |  225.04 | 120 | 0 |
 |   Flask    |  13393 | 224.14  |  120 | 0 |
 |   Japronto |  19003 |  319.82 | 62  | 0 |
 |   Pyramid  |  13316 |  223.58 | 120 | 0 |
@@ -128,3 +128,8 @@ locust -f benchmark/text_locust.py --no-web -c 3000 -r 100 -t2m --csv=[filename_
 3. Auto extract benchmark result and generate the final table
 4. Track memory footprint for each framework
 5. File serving benchmark
+
+
+## Data content value
+
+1. Data for text, json are imported from microframeworks.settings, with Django as exception( should be fixed in the future )
