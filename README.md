@@ -15,7 +15,7 @@ All framework are under Linode 1vCPU 1GB with no additional pipeline layer. Addi
 
 2. Text delivering : Hello World
 
-Locust will load test all frameworks for full 2 minutes. I will increase the concurrent users number untill the framework start having failed connection. To prevent os resource cap, resource limitation was set to 999999.
+Locust will load test all frameworks for full 2 minutes. The concurrent users number will incremental increase until the framework start having failed connection. To prevent os resource cap, resource limitation was set to 999999.
 
 ## Results
 
@@ -85,7 +85,7 @@ Locust load test for 1 minute, total user 10,000 with hatch rate of 100 (user gr
 
 For the lowest median response time, Japronto and Tornado are the best among all 5 frameworks.
 
-Flaskin my opinion are the best synchronous framework among all. aiohttp, Tornado, Japronto have the better performance in async function. Do note that tornado support async function in callback form, while Japronto use uvloop for async task. 
+Flask in our opinion are the best synchronous framework among all. aiohttp, Tornado, Japronto have the better performance in async function. Do note that tornado support async function in callback form, while Japronto use uvloop for async task. 
 
 Note : The one million requests per second from Japronto is archieved using pipelining. However, in a real world use case, each client will only send one request per second.
 
